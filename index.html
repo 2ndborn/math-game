@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+<div id="container">
+    <span id="operand1"></span>
+    <span id="operator">+</span>
+    <span id="operand2"></span>
+    <span>=</span>
+    <input id="input" type="text" inputmode="numeric">
+    <button onclick="submitBtn()">Submit</button>
+    <button id="start" onclick="startBtn()">Start</button>
+    <button id="restart" onclick="restart()" class="hide">Restart</button>
+</div>
+<div class="game-container">
+    <button id="add" onclick="game('+')">+</button>
+    <button id="sub" onclick="game('-')">-</button>
+    <button id="mul" onclick="game('*')">x</button>
+    <button id="div" onclick="game('/')">/</button>
+    <button id="div" onclick="game('?')">?</button>
+</div>
+<div>
+    <h4>Score
+        <span id="score">0</span>
+    </h4>
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html>
