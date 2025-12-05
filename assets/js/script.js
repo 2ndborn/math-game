@@ -4,10 +4,17 @@ const input = document.getElementById("input");
 let operator = document.getElementById("operator");
 let score = 0
 let rounds = 0
+const isRandomMode = false;
 
 function displayNum() {
-    operand1.textContent = Math.floor(Math.random() * 9) + 1;
+    operand1.textContent = Math.floor(Math.random() * 99) + 1;
     operand2.textContent = Math.floor(Math.random() * 9) + 1;
+}
+
+function random() {
+    const operators = ["+", "-", "x", "/"]
+    const randomOp = Math.floor(Math.random() * operators.length)
+    operator.textContent = operators[randomOp]
 }
 
 function startBtn() {
@@ -26,12 +33,19 @@ function submitBtn() {
 function game(op) {
     if (op === "+") {
         operator.textContent = "+"
+        isRandomMode = false
     } else if ( op === "-") {
         operator.textContent = "-"
+        isRandomMode = false
     } else if ( op === "*") {
         operator.textContent = "x"
+        isRandomMode = false
     } else if ( op === "/") {
         operator.textContent = "/"
+        isRandomMode = false
+    } else if ( op === "?") {
+        random()
+        isRandomMode =true
     }
     displayNum()
     input.focus()
@@ -53,7 +67,7 @@ function checkAnswer() {
     } else if (operator.textContent === "x") {
         sum = num1 * num2
     } else if (operator.textContent === "/") {
-        sum = num2 !== 0 ? Math.floor(num1 / num2) : 0;
+        sum = Math.floor(num1 < num2 ? num2 / num1 : num1 / num2);
     }
 
     if (inputVal === sum) {
@@ -68,6 +82,7 @@ function checkAnswer() {
     }
     incrementRounds()
     displayNum()
+    if (isRandomMode) random();
 }
 
 function incrementScore() {
