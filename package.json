@@ -1,0 +1,23 @@
+{
+  "name": "math-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2ndborn/math-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2ndborn/math-game/issues"
+  },
+  "homepage": "https://github.com/2ndborn/math-game#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
