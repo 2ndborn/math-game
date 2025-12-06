@@ -4,20 +4,23 @@ const input = document.getElementById("input");
 let operator = document.getElementById("operator");
 let score = 0
 let rounds = 0
-const isRandomMode = false;
 
 function displayNum() {
+    const operand1 = document.getElementById("operand1");
+    const operand2 = document.getElementById("operand2");
     operand1.textContent = Math.floor(Math.random() * 99) + 1;
     operand2.textContent = Math.floor(Math.random() * 9) + 1;
 }
 
 function random() {
+    let operator = document.getElementById("operator");
     const operators = ["+", "-", "x", "/"]
     const randomOp = Math.floor(Math.random() * operators.length)
     operator.textContent = operators[randomOp]
 }
 
 function startBtn() {
+    const input = document.getElementById("input");
     displayNum();
     input.focus();
 }
@@ -31,6 +34,9 @@ function submitBtn() {
 }
 
 function game(op) {
+    const input = document.getElementById("input");
+    let operator = document.getElementById("operator");
+    let isRandomMode = false;
     if (op === "+") {
         operator.textContent = "+"
         isRandomMode = false
@@ -104,3 +110,4 @@ function gameOver() {
     
 }
 
+module.exports = {displayNum, random, startBtn, game}
