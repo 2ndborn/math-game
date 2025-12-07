@@ -10,4 +10,11 @@ describe('Switching game mode', () => {
         expect(document.getElementById("input")).toHaveFocus();
         expect(parseInt(document.getElementById("score").textContent)).toBe(0)
     })
+
+    test("sets + operator", () => {
+        game("-");
+        expect(document.getElementById("operator").textContent).toBe("-")
+        expect(document.getElementById("input")).toHaveFocus();
+        expect(parseInt(document.getElementById("score").textContent)).toBe(0)
+    })
 })

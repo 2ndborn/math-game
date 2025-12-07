@@ -1,9 +1,10 @@
-const operand1 = document.getElementById("operand1");
-const operand2 = document.getElementById("operand2");
-const input = document.getElementById("input");
-let operator = document.getElementById("operator");
+// const operand1 = document.getElementById("operand1");
+// const operand2 = document.getElementById("operand2");
+// const input = document.getElementById("input");
+// let operator = document.getElementById("operator");
 let score = 0
 let rounds = 0
+let isRandomMode = false
 
 function displayNum() {
     const operand1 = document.getElementById("operand1");
@@ -36,7 +37,7 @@ function submitBtn() {
 function game(op) {
     const input = document.getElementById("input");
     let operator = document.getElementById("operator");
-    let isRandomMode = false;
+    
     if (op === "+") {
         operator.textContent = "+"
         isRandomMode = false
@@ -61,9 +62,10 @@ function game(op) {
 }
 
 function checkAnswer() {
-    const num1 = parseInt(operand1.textContent)
-    const num2 = parseInt(operand2.textContent)
-    const inputVal = parseInt(input.value)
+    const num1 = parseInt(document.getElementById("operand1").textContent);
+    const num2 = parseInt(document.getElementById("operand2").textContent);
+    const inputVal = parseInt(document.getElementById("input").value)
+    let operator = document.getElementById("operator")
 
     let sum;
     if (operator.textContent === "+") {
@@ -98,7 +100,7 @@ function incrementScore() {
 
 function incrementRounds() {
     rounds++;
-    if (rounds === 2) gameOver()
+    if (rounds === 10) gameOver()
 }
 
 function gameOver() {
@@ -110,4 +112,11 @@ function gameOver() {
     
 }
 
-module.exports = {displayNum, random, startBtn, game}
+module.exports = {
+    displayNum, 
+    random, 
+    startBtn, 
+    game, 
+    checkAnswer,
+    incrementScore
+}
