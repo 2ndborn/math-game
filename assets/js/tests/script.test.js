@@ -1,5 +1,5 @@
-const { setupDOM } = require('./testUtils')
-const { displayNum, random, startBtn, game } = require("./script")
+const { setupDOM } = require('../testUtils')
+const { displayNum, random, startBtn, game } = require("../script")
 
 describe("Math game functions", () => {
 
@@ -21,7 +21,7 @@ describe("Math game functions", () => {
 
     test('random sets a random operator', () => {
         random();
-        expect(["+", "-", "x", "/"]).toContain(
+        expect(["+", "-", "x", "÷"]).toContain(
             document.getElementById("operator").textContent)
     })
 
@@ -30,11 +30,7 @@ describe("Math game functions", () => {
         expect(document.getElementById("operand1").textContent).not.toBe("");
         expect(document.getElementById("operand2").textContent).not.toBe("");
         expect(document.getElementById("input")).toHaveFocus();
+        expect(document.getElementById("start").classList.contains("hide")).toBe(true);
+        expect(document.getElementById("restart").classList.contains("hide")).toBe(false);
     })
-
-    // test('set + between operators', () => {
-    //     game("+", operator, operand1, operand2);
-    //     expect(operator.textContent).toBe("+");
-    //     expect(isRandomMode).toBe(false);
-    // })
 })

@@ -1,7 +1,3 @@
-// const operand1 = document.getElementById("operand1");
-// const operand2 = document.getElementById("operand2");
-// const input = document.getElementById("input");
-// let operator = document.getElementById("operator");
 let score = 0
 let rounds = 0
 let isRandomMode = false
@@ -15,12 +11,16 @@ function displayNum() {
 
 function random() {
     let operator = document.getElementById("operator");
-    const operators = ["+", "-", "x", "/"]
+    const operators = ["+", "-", "x", "÷"]
     const randomOp = Math.floor(Math.random() * operators.length)
     operator.textContent = operators[randomOp]
 }
 
 function startBtn() {
+    const start = document.getElementById("start")
+    const restart = document.getElementById("restart")
+    start.classList.add("hide");
+    restart.classList.remove("hide");
     const input = document.getElementById("input");
     displayNum();
     input.focus();
@@ -48,11 +48,11 @@ function game(op) {
         operator.textContent = "x"
         isRandomMode = false
     } else if ( op === "/") {
-        operator.textContent = "/"
+        operator.textContent = "÷"
         isRandomMode = false
     } else if ( op === "?") {
         random()
-        isRandomMode =true
+        isRandomMode = true
     }
     displayNum()
     input.focus()
@@ -61,7 +61,7 @@ function game(op) {
     document.getElementById("score").textContent = score;
 }
 
-function checkAnswer() {
+function checkAnswer(randomFn = random) {
     const num1 = parseInt(document.getElementById("operand1").textContent);
     const num2 = parseInt(document.getElementById("operand2").textContent);
     const inputVal = parseInt(document.getElementById("input").value)
@@ -74,7 +74,7 @@ function checkAnswer() {
         sum = Math.abs(num1 - num2)
     } else if (operator.textContent === "x") {
         sum = num1 * num2
-    } else if (operator.textContent === "/") {
+    } else if (operator.textContent === "÷") {
         sum = Math.floor(num1 < num2 ? num2 / num1 : num1 / num2);
     }
 
@@ -90,7 +90,9 @@ function checkAnswer() {
     }
     incrementRounds()
     displayNum()
-    if (isRandomMode) random();
+    if (isRandomMode) {
+        random();
+    }    
 }
 
 function incrementScore() {
