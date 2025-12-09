@@ -1,4 +1,4 @@
-const {checkAnswer, random} = require('../script');
+const {checkAnswer} = require('../script');
 const {setupDOM } = require('../testUtils');
 
 describe('Checks the users answers', () => {

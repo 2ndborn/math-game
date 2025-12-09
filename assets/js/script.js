@@ -1,12 +1,32 @@
 let score = 0
 let rounds = 0
 let isRandomMode = false
+let time = 10;
 
 function displayNum() {
     const operand1 = document.getElementById("operand1");
     const operand2 = document.getElementById("operand2");
     operand1.textContent = Math.floor(Math.random() * 99) + 1;
     operand2.textContent = Math.floor(Math.random() * 9) + 1;
+    time = 10;
+    document.getElementById("time").textContent = time;
+    timer();
+}
+
+function timer() {
+    const input = document.getElementById("input");
+    if (time === 0) {
+        input.value = "";
+        submitBtn();
+        return;
+    }
+
+    document.getElementById("time").textContent = time;
+    
+    setTimeout(() => {
+        time--;
+        timer()
+    }, 1000)
 }
 
 function random() {
@@ -120,5 +140,7 @@ module.exports = {
     startBtn, 
     game, 
     checkAnswer,
-    incrementScore
+    incrementScore,
+    timer,
+    submitBtn
 }

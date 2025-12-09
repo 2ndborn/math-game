@@ -6,7 +6,8 @@ function setupDOM() {
     <input id="input" type="text" inputmode="numeric">
     <span id="score">0</span>
     <button id="start">Start</button>
-    <button id="restart" class="hide">Restart</button>  
+    <button id="restart" class="hide">Restart</button>
+    <span id="time">10</span>
     `
 }
 
