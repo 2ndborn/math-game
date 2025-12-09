@@ -2,6 +2,7 @@ let score = 0
 let rounds = 0
 let isRandomMode = false
 let time = 10;
+let timerId = null;
 
 function displayNum() {
     const operand1 = document.getElementById("operand1");
@@ -10,6 +11,7 @@ function displayNum() {
     operand2.textContent = Math.floor(Math.random() * 9) + 1;
     time = 10;
     document.getElementById("time").textContent = time;
+    if (timerId) clearTimeout(timerId);
     timer();
 }
 
@@ -23,10 +25,18 @@ function timer() {
 
     document.getElementById("time").textContent = time;
     
-    setTimeout(() => {
+    timerId = setTimeout(() => {
         time--;
         timer()
     }, 1000)
+}
+
+function keypad(num) {
+    document.getElementById("input").value += num;
+}
+
+function del() {
+    document.getElementById("input").value = "";
 }
 
 function random() {

@@ -1,5 +1,6 @@
 const { setupDOM } = require('../testUtils')
-const { startBtn } = require("../script")
+const { startBtn, displayNum } = require("../script")
+const script = require("../script")
 
 describe("start button game functions", () => {
 
