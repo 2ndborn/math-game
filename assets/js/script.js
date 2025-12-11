@@ -152,5 +152,7 @@ module.exports = {
     checkAnswer,
     incrementScore,
     timer,
-    submitBtn
+    submitBtn,
+    keypad,
+    del
 }

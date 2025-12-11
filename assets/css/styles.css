@@ -1,3 +1,95 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .hide {
     display: none;
+}
+
+#restart {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#score {
+    padding: 0 0.25rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+h4 {
+    margin: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#time {
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    background-color: aqua;
+}
+
+.container span {
+    font-size: clamp(1rem, -0.455rem + 7.27vw, 5rem);
+    margin: 0 5px;
+}
+
+#operand1,
+#operand2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(3.125rem, 2.083rem + 5.56vw, 6.25rem);
+    height: clamp(3.125rem, 2.083rem + 5.56vw, 6.25rem);
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    font-family: "Stack Sans Text", sans-serif;
+}
+
+#input {
+    width: clamp(3.125rem, 2.083rem + 5.56vw, 6.25rem);
+    height: clamp(3.125rem, 2.083rem + 5.56vw, 6.25rem);
+    border-radius: 5px;
+    font-size: clamp(1rem, -0.455rem + 7.27vw, 5rem);
+    font-family: "Stack Sans Text", sans-serif;
+    text-align: center;
+    border: 2px solid black;
+    margin: 0 5px;
+}
+
+.keypad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-color: purple;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.keypad button {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 100px;
+    cursor: pointer;
 }
