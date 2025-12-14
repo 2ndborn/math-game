@@ -72,6 +72,7 @@ function game(op) {
     const title = document.getElementById("title");
     const container = document.getElementById("container");
     const head = document.getElementById("head");
+    const headTwo = document.getElementById("head2");
     const gameBtns = document.querySelectorAll(".game-btn");
     let array = ["Ready", "Steady", "Go!!!"];
     
@@ -79,10 +80,10 @@ function game(op) {
         operator.textContent = "+"
         isRandomMode = false
     } else if ( op === "-") {
-        operator.textContent = "-"
+        operator.textContent = "−"
         isRandomMode = false
     } else if ( op === "*") {
-        operator.textContent = "x"
+        operator.textContent = "×"
         isRandomMode = false
     } else if ( op === "/") {
         operator.textContent = "÷"
@@ -93,6 +94,7 @@ function game(op) {
     }
 
     head.textContent = "";
+    headTwo.remove()
     gameBtns.forEach(btn => btn.remove());
     array.forEach((arr, i) => {
         setTimeout(() => {
@@ -124,9 +126,9 @@ function checkAnswer(randomFn = random) {
     let sum;
     if (operator.textContent === "+") {
         sum = num1 + num2
-    } else if (operator.textContent === "-") {
+    } else if (operator.textContent === "−") {
         sum = Math.abs(num1 - num2)
-    } else if (operator.textContent === "x") {
+    } else if (operator.textContent === "×") {
         sum = num1 * num2
     } else if (operator.textContent === "÷") {
         sum = Math.floor(num1 < num2 ? num2 / num1 : num1 / num2);
