@@ -3,6 +3,8 @@ let rounds = 0
 let isRandomMode = false
 let time = 10;
 let timerId = null;
+const body = document.body;
+body.classList.add("body")
 
 function displayNum() {
     const operand1 = document.getElementById("operand1");
@@ -67,6 +69,11 @@ function submitBtn() {
 function game(op) {
     const input = document.getElementById("input");
     let operator = document.getElementById("operator");
+    const title = document.getElementById("title");
+    const container = document.getElementById("container");
+    const head = document.getElementById("head");
+    const gameBtns = document.querySelectorAll(".game-btn");
+    let array = ["Ready", "Steady", "Go!!!"];
     
     if (op === "+") {
         operator.textContent = "+"
@@ -84,11 +91,28 @@ function game(op) {
         random()
         isRandomMode = true
     }
-    displayNum()
-    input.focus()
-    rounds = 0
-    score = 0;
-    document.getElementById("score").textContent = score;
+
+    head.textContent = "";
+    gameBtns.forEach(btn => btn.remove());
+    array.forEach((arr, i) => {
+        setTimeout(() => {
+            head.textContent = arr;
+            setTimeout(() => {
+                head.textContent = "";
+            }, 1000)
+        }, i * 1500)
+    })
+
+    setTimeout(() => {
+        body.classList.remove("body");
+        title.classList.add("hide");
+        container.classList.remove("hide");
+        displayNum()
+        input.focus()
+        rounds = 0
+        score = 0;
+        document.getElementById("score").textContent = score;
+    }, 5000)
 }
 
 function checkAnswer(randomFn = random) {
