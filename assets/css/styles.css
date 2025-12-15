@@ -77,6 +77,9 @@ body {
 }
 
 #restart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 1.2rem;
     background-color: transparent;
     border: none;
@@ -91,13 +94,17 @@ body {
 }
 
 h4 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     margin: 0;
 }
 
 .top {
+    height: 15vh;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #time {
@@ -113,7 +120,7 @@ h4 {
 }
 
 .container span {
-    font-size: clamp(1rem, -0.455rem + 7.27vw, 5rem);
+    font-size: clamp(1rem, -0.091rem + 5.45vw, 4rem);
     margin: 0 5px;
 }
 
