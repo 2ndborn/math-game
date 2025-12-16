@@ -77,16 +77,16 @@ function game(op) {
     let array = ["Ready", "Steady", "Go!!!"];
     
     if (op === "+") {
-        operator.textContent = "+"
+        operator.innerHTML = '<i class="fa-solid fa-plus"></i>'
         isRandomMode = false
     } else if ( op === "-") {
-        operator.textContent = "−"
+        operator.innerHTML = '<i class="fa-solid fa-minus"></i>'
         isRandomMode = false
     } else if ( op === "*") {
-        operator.textContent = "×"
+        operator.innerHTML = '<i class="fa-solid fa-xmark"></i>'
         isRandomMode = false
     } else if ( op === "/") {
-        operator.textContent = "÷"
+        operator.innerHTML = '<i class="fa-solid fa-divide"></i>'
         isRandomMode = false
     } else if ( op === "?") {
         random()
@@ -124,13 +124,13 @@ function checkAnswer(randomFn = random) {
     let operator = document.getElementById("operator")
 
     let sum;
-    if (operator.textContent === "+") {
+    if (operator.innerHTML === '<i class="fa-solid fa-plus"></i>') {
         sum = num1 + num2
-    } else if (operator.textContent === "−") {
+    } else if (operator.innerHTML === '<i class="fa-solid fa-minus"></i>') {
         sum = Math.abs(num1 - num2)
-    } else if (operator.textContent === "×") {
+    } else if (operator.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
         sum = num1 * num2
-    } else if (operator.textContent === "÷") {
+    } else if (operator.innerHTML === '<i class="fa-solid fa-divide"></i>') {
         sum = Math.floor(num1 < num2 ? num2 / num1 : num1 / num2);
     }
 
