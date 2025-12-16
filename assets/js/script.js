@@ -6,58 +6,6 @@ let timerId = null;
 const body = document.body;
 body.classList.add("body")
 
-function displayNum() {
-    const operand1 = document.getElementById("operand1");
-    const operand2 = document.getElementById("operand2");
-    operand1.textContent = Math.floor(Math.random() * 9) + 1;
-    operand2.textContent = Math.floor(Math.random() * 9) + 1;
-    time = 10;
-    document.getElementById("time").textContent = time;
-    if (timerId) clearTimeout(timerId);
-    timer();
-}
-
-function timer() {
-    const input = document.getElementById("input");
-    if (time === 0) {
-        input.value = "";
-        submitBtn();
-        return;
-    }
-
-    document.getElementById("time").textContent = time;
-    
-    timerId = setTimeout(() => {
-        time--;
-        timer()
-    }, 1000)
-}
-
-function keypad(num, event) {
-    document.getElementById("input").value += num;
-
-    if (event && event.target) {
-        event.target.classList.add("active");
-        setTimeout(() => event.target.classList.remove("active"), 150);
-    }
-}
-
-function delBtn() {
-    document.getElementById("input").value = "";
-    const del = document.getElementById("del");
-    del.classList.add("active");
-    setTimeout(() => del.classList.remove("active"), 150);
-}
-
-function submitBtn() {
-    const sub = document.getElementById("sub");
-    sub.classList.add("active");
-    setTimeout(() => sub.classList.remove("active"), 150);
-    setTimeout(() => {
-        checkAnswer();
-    }, 200);
-}
-
 document.addEventListener("keydown", (event) => {
     if (event.key >= "0" && event.key <= "9") {
         const num = parseInt(event.key);
@@ -93,6 +41,65 @@ document.addEventListener("keydown", (event) => {
         }
     }
 })
+
+
+function displayNum() {
+    let operand1 = Math.floor(Math.random() * 9) + 1;
+    let operand2 = Math.floor(Math.random() * 9) + 1;
+
+    if (operand1 < operand2) {
+        let temp = operand1;
+        operand1 = operand2;
+        operand2 = temp;
+    }
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    time = 10;
+    document.getElementById("time").textContent = time;
+    if (timerId) clearTimeout(timerId);
+    timer();
+}
+
+function timer() {
+    const input = document.getElementById("input");
+    if (time === 0) {
+        input.value = "";
+        submitBtn();
+        return;
+    }
+
+    document.getElementById("time").textContent = time;
+    
+    timerId = setTimeout(() => {
+        time--;
+        timer()
+    }, 1000)
+}
+
+function keypad(num, event) {
+    document.getElementById("input").value += num;
+
+    if (event && event.target) {
+        event.target.classList.add("active");
+        setTimeout(() => event.target.classList.remove("active"), 150);
+    }
+}
+
+function delBtn() {
+    document.getElementById("input").value = "";
+    const del = document.getElementById("delBtn");
+    del.classList.add("active");
+    setTimeout(() => del.classList.remove("active"), 150);
+}
+
+function submitBtn() {
+    const sub = document.getElementById("sub");
+    sub.classList.add("active");
+    setTimeout(() => sub.classList.remove("active"), 150);
+    setTimeout(() => {
+        checkAnswer();
+    }, 200);
+}
 
 function random() {
     let operator = document.getElementById("operator");
@@ -180,7 +187,7 @@ function checkAnswer(randomFn = random) {
     } else if (operator.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
         sum = num1 * num2
     } else if (operator.innerHTML === '<i class="fa-solid fa-divide"></i>') {
-        sum = Math.floor(num1 < num2 ? num2 / num1 : num1 / num2);
+        sum = Math.floor(num1 / num2);
     }
 
     if (inputVal === sum) {
@@ -229,5 +236,5 @@ module.exports = {
     timer,
     submitBtn,
     keypad,
-    del
+    delBtn
 }
