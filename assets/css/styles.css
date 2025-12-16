@@ -1,6 +1,6 @@
 body {
     font-family: 'Noto Sans', sans-serif;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .body {
@@ -38,6 +38,16 @@ body {
 @keyframes hfade {
     0% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+.correct {
+    background-image: radial-gradient(
+        ellipse 90% 85% at 50% 10%, white, hsl(87, 100%, 80%));
+}
+
+.incorrect {
+    background-image: radial-gradient(
+        ellipse 90% 85% at 50% 10%, white, hsl(0, 100%, 80%));
 }
 
 .game-container {
@@ -94,6 +104,11 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+#restart:hover {
+    transform: scale(1.2);
+    color: yellowgreen;
 }
 
 #score {
@@ -174,7 +189,7 @@ h4 {
 
 .keypad button {
     padding: 0.25rem 0.5rem;
-    font-size: max(2rem, calc(3.5rem - 1vw));
+    font-size: max(2rem, calc(3rem - 1vw));
     font-weight: 700    ;
     border-radius: 100px;
     border: none;

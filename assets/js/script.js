@@ -178,6 +178,7 @@ function checkAnswer(randomFn = random) {
     const num2 = parseInt(document.getElementById("operand2").textContent);
     const inputVal = parseInt(document.getElementById("input").value)
     let operator = document.getElementById("operator")
+    const container = document.getElementById("container");
 
     let sum;
     if (operator.innerHTML === '<i class="fa-solid fa-plus"></i>') {
@@ -191,11 +192,19 @@ function checkAnswer(randomFn = random) {
     }
 
     if (inputVal === sum) {
+        document.body.classList.add("correct")
+        setTimeout(() => {
+            document.body.classList.remove("correct")
+        }, 1000);
         alert("Well done!")
         input.value = "";
         input.focus()
         incrementScore()
     } else {
+        document.body.classList.add("incorrect")
+        setTimeout(() => {
+            document.body.classList.remove("incorrect")
+        }, 1000);
         alert(`The correct answer is ${sum}`)
         input.value = "";
         input.focus()
