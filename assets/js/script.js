@@ -9,7 +9,7 @@ body.classList.add("body")
 function displayNum() {
     const operand1 = document.getElementById("operand1");
     const operand2 = document.getElementById("operand2");
-    operand1.textContent = Math.floor(Math.random() * 99) + 1;
+    operand1.textContent = Math.floor(Math.random() * 9) + 1;
     operand2.textContent = Math.floor(Math.random() * 9) + 1;
     time = 10;
     document.getElementById("time").textContent = time;
@@ -33,13 +33,66 @@ function timer() {
     }, 1000)
 }
 
-function keypad(num) {
+function keypad(num, event) {
     document.getElementById("input").value += num;
+
+    if (event && event.target) {
+        event.target.classList.add("active");
+        setTimeout(() => event.target.classList.remove("active"), 150);
+    }
 }
 
-function del() {
+function delBtn() {
     document.getElementById("input").value = "";
+    const del = document.getElementById("del");
+    del.classList.add("active");
+    setTimeout(() => del.classList.remove("active"), 150);
 }
+
+function submitBtn() {
+    const sub = document.getElementById("sub");
+    sub.classList.add("active");
+    setTimeout(() => sub.classList.remove("active"), 150);
+    setTimeout(() => {
+        checkAnswer();
+    }, 200);
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key >= "0" && event.key <= "9") {
+        const num = parseInt(event.key);
+        event.preventDefault()
+        keypad(num);
+
+        const btn = document.getElementById("btn" + num);
+        if (btn) {
+            btn.classList.add("active");
+            setTimeout(() => btn.classList.remove("active"), 150);
+        }
+    }
+
+    if (event.key === "Backspace") {
+        const del = document.getElementById("delBtn");
+        if (del) {
+            del.classList.add("active");
+            setTimeout(() => del.classList.remove("active"), 150);
+        }
+        event.preventDefault()
+        delBtn();
+
+    }
+
+    if (event.key === "Enter") {
+        event.preventDefault();
+        checkAnswer();
+
+        const sub = document.getElementById("sub"); // keypad submit button
+        if (sub) {
+            sub.classList.add("active");
+            setTimeout(() => sub.classList.remove("active"), 150);
+        }
+    }
+})
 
 function random() {
     let operator = document.getElementById("operator");
@@ -60,10 +113,6 @@ function startBtn() {
 
 function restart() {
     location.reload()
-}
-
-function submitBtn() {
-    checkAnswer()
 }
 
 function game(op) {
