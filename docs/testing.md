@@ -44,14 +44,14 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 
 | Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
-| I want a home page with the game name so I understand what the site is about. | An appealing home page with the name of the game on it. | ![Home section]() |
+| I want a home page with the game name so I understand what the site is about. | An appealing home page with the name of the game on it. | ![Home section](/docs/assets/laptop_home.webp) |
 | I want to see game play options so that I can have an idea of where to navigate. | There are 5 buttons +, -, x, / & ? on the home section | See above |
 
 `The Game section`
 
 |  Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
-| I want the game to generate random math sums so that I can expect a different math question every round. |New numbers are generated every round. | ![Game page section]() |
+| I want the game to generate random math sums so that I can expect a different math question every round. |New numbers are generated every round. | ![Game page section](/docs/assets/laptop_game.webp) |
 | I want the game to end after 10 questions so that I don't get bored. | The game ends after 10 questions rendering the game over page. | ![Game over page]() |
 |I want to know how many correct answers I got so I can review my performance.|The game over page renders the users final score|See above|
 |I want to be able to restart the game so that I can try again if I get distracted.|The restart button is located on the top right of the game page and take the user back to the home section.|See above|
