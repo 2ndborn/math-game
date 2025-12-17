@@ -80,10 +80,10 @@ Devices tested the site using the following browsers:
 * Opera 
 ---
 ## Responsiveness (px)
-| 390 | 768 | 1024 | 1200 |
-|-|-|-|-|
-|![390](/docs/assets/iphone_home.webp)|![768](/docs/assets/ipadmini_home.webp)|![1024](/docs/assets/ipadpro_home.webp)|![1200](/docs/assets/laptop_home.webp)|
-|![390](/docs/assets/iphone_game.webp)|![768](/docs/assets/ipadmin_game.webp)|![1024](/docs/assets/ipadpro_game.webp)|![1200](/docs/assets/laptop_game.webp)|
+|| 390 | 768 | 1024 | 1200 |
+|-|-|-|-|-|
+|Home|![390](/docs/assets/iphone_home.webp)|![768](/docs/assets/ipadmini_home.webp)|![1024](/docs/assets/ipadpro_home.webp)|![1200](/docs/assets/laptop_home.webp)|
+|Game|![390](/docs/assets/iphone_game.webp)|![768](/docs/assets/ipadmin_game.webp)|![1024](/docs/assets/ipadpro_game.webp)|![1200](/docs/assets/laptop_game.webp)|
 
 Additional testing was taken by friends and family on a variety of devices and screen sizes.
 
