@@ -118,6 +118,19 @@ body {
     border-radius: 2px;
 }
 
+.correct-answer {
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    margin: 0;
+    animation: answer 1s forwards;
+}
+
+@keyframes answer {
+    0% {opacity: 0; transform: translateY(10px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
 h4 {
     position: absolute;
     top: 10px;

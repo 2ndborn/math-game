@@ -181,7 +181,6 @@ function checkAnswer(randomFn = random) {
     const num2 = parseInt(document.getElementById("operand2").textContent);
     const inputVal = parseInt(document.getElementById("input").value)
     let operator = document.getElementById("operator")
-    const container = document.getElementById("container");
 
     let sum;
     if (operator.innerHTML === '<i class="fa-solid fa-plus"></i>') {
@@ -199,24 +198,35 @@ function checkAnswer(randomFn = random) {
         setTimeout(() => {
             document.body.classList.remove("correct")
         }, 1000);
-        alert("Well done!")
         input.value = "";
         input.focus()
         incrementScore()
+        showMessage("Correct", "green")
     } else {
         document.body.classList.add("incorrect")
         setTimeout(() => {
             document.body.classList.remove("incorrect")
         }, 1000);
-        alert(`The correct answer is ${sum}`)
         input.value = "";
         input.focus()
+        showMessage(`The correct answer is ${sum}`, "red");
     }
     incrementRounds()
     displayNum()
     if (isRandomMode) {
         random();
     }    
+}
+
+function showMessage(text, color) {
+    const h3 = document.createElement("h3");
+    h3.classList.add("correct-answer");
+    h3.textContent = text;
+    h3.style.color = color;
+    body.appendChild(h3);
+    setTimeout(() => {
+        h3.remove();
+    }, 1000);
 }
 
 function incrementScore() {
