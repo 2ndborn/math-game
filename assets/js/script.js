@@ -265,6 +265,41 @@ function gameOver() {
     body.appendChild(div);
 }
 
+function gameBtnHover() {
+    const con = document.getElementById('title');
+    const desc = document.createElement('h3');
+    con.appendChild(desc);
+    const buttons = document.querySelectorAll('.game-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseover', () => {
+            desc.textContent = btn.dataset.desc;
+            desc.classList.add('show');
+        });
+        btn.addEventListener('mouseout', () => {
+            desc.textContent = "";
+            desc.classList.remove('show');
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', gameBtnHover);
+document.addEventListener('onmouseover', () => {
+    const con = document.getElementById('title');
+    const h3 = document.createElement('h3');
+    const buttons = document.querySelectorAll('.game-btn');
+    buttons.forEach(btn => {
+        if (btn.innerHTML === '<i class="fa-solid fa-plus"></i>') {
+            h3.textContent = "Challenge yourself with addition sums";
+        } else if (btn.innerHTML === '<i class="fa-solid fa-minus"></i>') {
+            h3.textContent = "Challenge yourself with subtraction sums";
+        } else if (btn.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
+            h3.textContent = "Challenge yourself with multiplication sums";
+        } else if (btn.innerHTML === '<i class="fa-solid fa-divide"></i>') {
+            h3.textContent = "Challenge yourself with division sums";
+        }
+    })
+    con.appendChild(h3);
+})
+
 module.exports = {
     displayNum, 
     random, 

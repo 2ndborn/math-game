@@ -18,6 +18,15 @@ body {
     align-items: center;
 }
 
+#title h3 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#title h3.show {
+  opacity: 1;
+}
+
 #head {
     font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
     font-family: "Bitcount Prop Single", sans-serif;
@@ -90,7 +99,6 @@ body {
 #ran {
     color: hsl(60, 100%, 60%);
 }
-
 
 .hide {
     display: none!important;

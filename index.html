@@ -18,11 +18,26 @@
         <h1 id="head">Math-Game</h1>
         <h2 id="head2">Choose a game mode to start</h2>
         <div class="game-container">
-            <button id="add" class="game-btn" onclick="game('+')"><i class="fa-solid fa-plus"></i></button>
-            <button id="subtract" class="game-btn" onclick="game('-')"><i class="fa-solid fa-minus"></i></button>
-            <button id="multi" class="game-btn" onclick="game('*')"><i class="fa-solid fa-xmark"></i></button>
-            <button id="divide" class="game-btn" onclick="game('/')"><i class="fa-solid fa-divide"></i></button>
-            <button id="ran" class="game-btn" onclick="game('?')"><i class="fa-solid fa-question"></i></button>
+            <button id="add" class="game-btn" onclick="game('+')"
+                data-desc="Challenge yourself with addition sums"
+            >
+                <i class="fa-solid fa-plus"></i></button>
+            <button id="subtract" class="game-btn" onclick="game('-')"
+                data-desc="Challenge yourself with subtraction sums"
+            >
+                <i class="fa-solid fa-minus"></i></button>
+            <button id="multi" class="game-btn" onclick="game('*')"
+                data-desc="Challenge yourself with multiplication sums"
+            >
+                <i class="fa-solid fa-xmark"></i></button>
+            <button id="divide" class="game-btn" onclick="game('/')"
+                data-desc="Challenge yourself with division sums"
+            >
+                <i class="fa-solid fa-divide"></i></button>
+            <button id="ran" class="game-btn" onclick="game('?')"
+                data-desc="Challenge yourself with random sums"
+            >
+                <i class="fa-solid fa-question"></i></button>
         </div>
     </div>
     <div id="container" class="hide">
