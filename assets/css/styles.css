@@ -129,7 +129,8 @@ body {
 .correct-answer {
     position: absolute;
     top: 10px;
-    left: 10%;
+    left: 30%;
+    text-align: center;
     margin: 0;
     animation: answer 1s forwards;
 }

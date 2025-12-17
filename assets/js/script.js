@@ -134,6 +134,8 @@ function game(op) {
     const headTwo = document.getElementById("head2");
     const gameBtns = document.querySelectorAll(".game-btn");
     let array = ["Ready", "Steady", "Go!!!"];
+    const desc = document.querySelector("#title h3");
+    if(desc) desc.remove();
     
     if (op === "+") {
         operator.innerHTML = '<i class="fa-solid fa-plus"></i>';
@@ -282,23 +284,23 @@ function gameBtnHover() {
     });
 }
 document.addEventListener('DOMContentLoaded', gameBtnHover);
-document.addEventListener('onmouseover', () => {
-    const con = document.getElementById('title');
-    const h3 = document.createElement('h3');
-    const buttons = document.querySelectorAll('.game-btn');
-    buttons.forEach(btn => {
-        if (btn.innerHTML === '<i class="fa-solid fa-plus"></i>') {
-            h3.textContent = "Challenge yourself with addition sums";
-        } else if (btn.innerHTML === '<i class="fa-solid fa-minus"></i>') {
-            h3.textContent = "Challenge yourself with subtraction sums";
-        } else if (btn.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
-            h3.textContent = "Challenge yourself with multiplication sums";
-        } else if (btn.innerHTML === '<i class="fa-solid fa-divide"></i>') {
-            h3.textContent = "Challenge yourself with division sums";
-        }
-    })
-    con.appendChild(h3);
-})
+// document.addEventListener('onmouseover', () => {
+//     const con = document.getElementById('title');
+//     const h3 = document.createElement('h3');
+//     const buttons = document.querySelectorAll('.game-btn');
+//     buttons.forEach(btn => {
+//         if (btn.innerHTML === '<i class="fa-solid fa-plus"></i>') {
+//             h3.textContent = "Challenge yourself with addition sums";
+//         } else if (btn.innerHTML === '<i class="fa-solid fa-minus"></i>') {
+//             h3.textContent = "Challenge yourself with subtraction sums";
+//         } else if (btn.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
+//             h3.textContent = "Challenge yourself with multiplication sums";
+//         } else if (btn.innerHTML === '<i class="fa-solid fa-divide"></i>') {
+//             h3.textContent = "Challenge yourself with division sums";
+//         }
+//     })
+//     con.appendChild(h3);
+// })
 
 module.exports = {
     displayNum, 

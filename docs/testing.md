@@ -88,4 +88,13 @@ Devices tested the site using the following browsers:
 Additional testing was taken by friends and family on a variety of devices and screen sizes.
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
+| - | - | - | - | - |
+| `Home page` |
+| Description of games on the home page | When the user hovers over the operators, a description of the game is shown below. | Hovered over each operator. | A message appeared when hovering over each operator. | ✅ |
+| Ready, Steady, Go!!! | When the user clicks an operator on the home page, the words "Ready, Steady, Go!!!" are displayed before the game starts. | Clicked each operator. | The words "Ready, Steady, Go!!!" were rendered. | ✅ |
+| `Game page` |
+| Countdown | When the game starts, the timer decreases from 10 to 0. | Let the clock run to zero. | The timer decreased from 10 to 0. | ✅ |
+| Correct answer | When the user answers correctly, the background turns green, the score increases by 1, and the message "Correct" is displayed. | Answered correctly. | The background turned green, the score increased by 1, and the message "Correct" was rendered. | ✅ |
+| Incorrect answer | When the user answers incorrectly, the background turns red and the message "The correct answer is x" is displayed. | Answered incorrectly. | The background turned red and the message "The correct answer is x" was rendered. | ✅ |
+| Game over | When the game ends, the Game Over screen is displayed with the number of correct answers and a "Play Again" button. | Answered 10 questions. | The Game Over screen was rendered with the final score and the "Play Again" button. | ✅ |
+| Game over perfect score | When the game ends and the user answers all 10 questions correctly, the Game Over screen is displayed with "Perfect score," the number of correct answers, and a "Play Again" button. | Answered 10 questions correctly. | The Game Over screen was rendered with "Perfect score," the number of correct answers, and a "Play Again" button. | ✅ |
