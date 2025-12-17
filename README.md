@@ -31,10 +31,14 @@ A game designed to make basic math fun for individuals of all ages
 * The addition of a easy, normal and hard mode.
 ## Technologies
 ### Resources
+* HTML
+* CSS
+* Javascript
 * VSCode
 * Microsoft Copilot
 * Google Fonts
 * Font Awesome version 5
+* Cloud Convert - covert images
 
 **W3schools**
 * [Onscroll](https://www.w3schools.com/jsref/event_onscroll.asp)
