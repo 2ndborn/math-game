@@ -3,6 +3,7 @@ let rounds = 0
 let isRandomMode = false
 let time = 10;
 let timerId = null;
+let gameActive = true;
 const body = document.body;
 body.classList.add("body")
 
@@ -61,6 +62,8 @@ function displayNum() {
 }
 
 function timer() {
+    if (!gameActive) return;
+
     const input = document.getElementById("input");
     if (time === 0) {
         input.value = "";
@@ -217,28 +220,52 @@ function checkAnswer(randomFn = random) {
 }
 
 function incrementScore() {
+    if(!gameActive) return
     score++
     document.getElementById("score").textContent = score
 }
 
 function incrementRounds() {
+    if(!gameActive) return
     rounds++;
-    if (rounds === 10) gameOver()
+    if (rounds === 5) gameOver()
 }
 
 function gameOver() {
-    if(confirm(`Game Over\n\n
-        You scored ${score}/${rounds}\n\n
-        Play again?`) === true) {
-        location.reload()
+    // if(confirm(`Game Over\n\n
+    //     You scored ${score}/${rounds}\n\n
+    //     Play again?`) === true) {
+    //     location.reload()
+    // }
+    gameActive = false;
+    clearTimeout(timerId)
+    const container = document.getElementById("container");
+    container.classList.add("hide");
+    const div = document.createElement("div");
+    div.id = "title";
+    if (score === rounds) {
+        div.innerHTML = `
+        <h1 id="head">PERFECT SCORE</h1>
+    <h1 id="head">Game Over</h1>
+    <h2 id="head2" style="color: green">You scored ${score}/${rounds}</h2>
+    <button class="finishBtn" onclick="restart()">Play again?</button>
+    `
+    } else {
+        div.innerHTML = `
+    <h1 id="head">Game Over</h1>
+    <h2 id="head2" style="color: red">You scored ${score}/${rounds}</h2>
+    <button class="finishBtn" onclick="restart()">Play again?</button>
+    `
     }
+    
+    body.appendChild(div)
     
 }
 
 module.exports = {
     displayNum, 
     random, 
-    startBtn, 
+    startBtn,
     game, 
     checkAnswer,
     incrementScore,

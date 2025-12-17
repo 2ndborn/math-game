@@ -212,3 +212,17 @@ h4 {
 .fa-delete-left {
     color: rgb(139, 0, 0);
 }
+
+.finishBtn {
+    padding: 0.5rem 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: greenyellow;
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+.finishBtn:hover {
+    background-color: hsl(84, 100%, 30%);
+}
