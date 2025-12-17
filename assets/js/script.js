@@ -10,7 +10,7 @@ body.classList.add("body")
 document.addEventListener("keydown", (event) => {
     if (event.key >= "0" && event.key <= "9") {
         const num = parseInt(event.key);
-        event.preventDefault()
+        event.preventDefault();
         keypad(num);
 
         const btn = document.getElementById("btn" + num);
@@ -26,7 +26,7 @@ document.addEventListener("keydown", (event) => {
             del.classList.add("active");
             setTimeout(() => del.classList.remove("active"), 150);
         }
-        event.preventDefault()
+        event.preventDefault();
         delBtn();
 
     }
@@ -75,8 +75,8 @@ function timer() {
     
     timerId = setTimeout(() => {
         time--;
-        timer()
-    }, 1000)
+        timer();
+    }, 1000);
 }
 
 function keypad(num, event) {
@@ -107,13 +107,13 @@ function submitBtn() {
 function random() {
     let operator = document.getElementById("operator");
     const operators = ["+", "-", "x", "÷"]
-    const randomOp = Math.floor(Math.random() * operators.length)
-    operator.textContent = operators[randomOp]
+    const randomOp = Math.floor(Math.random() * operators.length);
+    operator.textContent = operators[randomOp];
 }
 
 function startBtn() {
-    const start = document.getElementById("start")
-    const restart = document.getElementById("restart")
+    const start = document.getElementById("start");
+    const restart = document.getElementById("restart");
     start.classList.add("hide");
     restart.classList.remove("hide");
     const input = document.getElementById("input");
@@ -122,7 +122,7 @@ function startBtn() {
 }
 
 function restart() {
-    location.reload()
+    location.reload();
 }
 
 function game(op) {
@@ -136,59 +136,59 @@ function game(op) {
     let array = ["Ready", "Steady", "Go!!!"];
     
     if (op === "+") {
-        operator.innerHTML = '<i class="fa-solid fa-plus"></i>'
-        isRandomMode = false
+        operator.innerHTML = '<i class="fa-solid fa-plus"></i>';
+        isRandomMode = false;
     } else if ( op === "-") {
-        operator.innerHTML = '<i class="fa-solid fa-minus"></i>'
-        isRandomMode = false
+        operator.innerHTML = '<i class="fa-solid fa-minus"></i>';
+        isRandomMode = false;
     } else if ( op === "*") {
-        operator.innerHTML = '<i class="fa-solid fa-xmark"></i>'
-        isRandomMode = false
+        operator.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        isRandomMode = false;
     } else if ( op === "/") {
-        operator.innerHTML = '<i class="fa-solid fa-divide"></i>'
-        isRandomMode = false
+        operator.innerHTML = '<i class="fa-solid fa-divide"></i>';
+        isRandomMode = false;
     } else if ( op === "?") {
-        random()
-        isRandomMode = true
+        random();
+        isRandomMode = true;
     }
 
     head.textContent = "";
-    headTwo.remove()
+    headTwo.remove();
     gameBtns.forEach(btn => btn.remove());
     array.forEach((arr, i) => {
         setTimeout(() => {
             head.textContent = arr;
             setTimeout(() => {
                 head.textContent = "";
-            }, 1000)
-        }, i * 1500)
-    })
+            }, 1000);
+        }, i * 1500);
+    });
 
     setTimeout(() => {
         body.classList.remove("body");
         title.classList.add("hide");
         container.classList.remove("hide");
-        displayNum()
-        input.focus()
-        rounds = 0
+        displayNum();
+        input.focus();
+        rounds = 0;
         score = 0;
         document.getElementById("score").textContent = score;
-    }, 5000)
+    }, 5000);
 }
 
 function checkAnswer(randomFn = random) {
     const num1 = parseInt(document.getElementById("operand1").textContent);
     const num2 = parseInt(document.getElementById("operand2").textContent);
-    const inputVal = parseInt(document.getElementById("input").value)
-    let operator = document.getElementById("operator")
+    const inputVal = parseInt(document.getElementById("input").value);
+    let operator = document.getElementById("operator");
 
     let sum;
     if (operator.innerHTML === '<i class="fa-solid fa-plus"></i>') {
-        sum = num1 + num2
+        sum = num1 + num2;
     } else if (operator.innerHTML === '<i class="fa-solid fa-minus"></i>') {
-        sum = Math.abs(num1 - num2)
+        sum = Math.abs(num1 - num2);
     } else if (operator.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
-        sum = num1 * num2
+        sum = num1 * num2;
     } else if (operator.innerHTML === '<i class="fa-solid fa-divide"></i>') {
         sum = Math.floor(num1 / num2);
     }
@@ -199,20 +199,20 @@ function checkAnswer(randomFn = random) {
             document.body.classList.remove("correct")
         }, 1000);
         input.value = "";
-        input.focus()
-        incrementScore()
-        showMessage("Correct", "green")
+        input.focus();
+        incrementScore();
+        showMessage("Correct", "green");
     } else {
-        document.body.classList.add("incorrect")
+        document.body.classList.add("incorrect");
         setTimeout(() => {
-            document.body.classList.remove("incorrect")
+            document.body.classList.remove("incorrect");
         }, 1000);
         input.value = "";
-        input.focus()
+        input.focus();
         showMessage(`The correct answer is ${sum}`, "red");
     }
-    incrementRounds()
-    displayNum()
+    incrementRounds();
+    displayNum();
     if (isRandomMode) {
         random();
     }    
@@ -230,25 +230,20 @@ function showMessage(text, color) {
 }
 
 function incrementScore() {
-    if(!gameActive) return
-    score++
-    document.getElementById("score").textContent = score
+    if(!gameActive) return;
+    score++;
+    document.getElementById("score").textContent = score;
 }
 
 function incrementRounds() {
-    if(!gameActive) return
+    if(!gameActive) return;
     rounds++;
-    if (rounds === 5) gameOver()
+    if (rounds === 5) gameOver();
 }
 
 function gameOver() {
-    // if(confirm(`Game Over\n\n
-    //     You scored ${score}/${rounds}\n\n
-    //     Play again?`) === true) {
-    //     location.reload()
-    // }
     gameActive = false;
-    clearTimeout(timerId)
+    clearTimeout(timerId);
     const container = document.getElementById("container");
     container.classList.add("hide");
     const div = document.createElement("div");
@@ -259,17 +254,15 @@ function gameOver() {
     <h1 id="head">Game Over</h1>
     <h2 id="head2" style="color: green">You scored ${score}/${rounds}</h2>
     <button class="finishBtn" onclick="restart()">Play again?</button>
-    `
+    `;
     } else {
         div.innerHTML = `
     <h1 id="head">Game Over</h1>
     <h2 id="head2" style="color: red">You scored ${score}/${rounds}</h2>
     <button class="finishBtn" onclick="restart()">Play again?</button>
-    `
+    `;
     }
-    
-    body.appendChild(div)
-    
+    body.appendChild(div);
 }
 
 module.exports = {
