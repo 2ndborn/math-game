@@ -48,3 +48,7 @@ A game designed to make basic math fun for individuals of all ages
 
 ## Testing
 [Click here to see view tests](/docs/testing.md)
+
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>pip3 install -r requirements.txt</code></pre>
+</div>
