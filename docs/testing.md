@@ -1,23 +1,10 @@
 # Testing
 
-## Running Tests Locally
-
-Add instructions for running tests locally.
-
-## Test Structure
-
-Describe how tests are organized and what they cover.
-
-## CI/CD
-
-Document any continuous integration or deployment configurations.
-
-# Testing
-
-Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
+Visit the deployed site: [Math-Game]((https://2ndborn.github.io/math-game/)
 ---
 ## CONTENTS
 
+* [LOCAL TESTING](#local-testing)
 * [AUTOMATED TESTING](#automated-testing)
   * [W3C Validator](#w3c-validator)
   * [JavaScript Validator](#javascript-validator)
@@ -25,12 +12,25 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
   * [Testing User Stories](#testing-user-stories)
   * [Full Testing](#full-testing)
 ---
+## LOCAL TESTING
+
+Jest was used to test the various function listed below:
+
+ * [game] assets/js/tests/game.test.js - Controls the game modes.
+ * [random] assets/js/tests/random.test.js - Controls the random operator mode.
+ * [diplayNum] assets/js/tests/displayNum.test.js - Generates the random numbers.
+ * [keypad] assets/js/tests/keypad.test.js - Controls the keypad.
+ * [checkAnswer] assets/js/tests/checkAnswer.test.js - Checks the users answer.
+ * [timer] assets/js/tests/timer.test.js - decrements the timer.
+ * [incrementScore] assets/js/tests/incrementScore.test.js - Increments the score.
+ * [gameOver] assets/js/tests/gameOver.test.js - Ends the game.
+
 ## AUTOMATED TESTING
 ### W3C Validator
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 * [index.html](https://validator.w3.org/nu/?showsource=yes&showimagereport=yes&doc=https%3A%2F%2F2ndborn.github.io%2Fmath-game%2F)
 * [styles.css](/docs/assets/styles_css.webp)
-- - -
+---
 
 ### JavaScript Validator
 
@@ -51,8 +51,8 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 
 |  Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
-| I want the game to generate random math sums so that I can expect a different math question every round. |New numbers are generated every round. | ![Game page section](/docs/assets/laptop_game.webp) |
-| I want the game to end after 10 questions so that I don't get bored. | The game ends after 10 questions rendering the game over page. | ![Game over page]() |
+| I want the game to generate random math sums so that I can expect a different math question every round. |New numbers are generated every round. | ![Game page section](/docs/assets/game_page.webp).webp) |
+| I want the game to end after 10 questions so that I don't get bored. | The game ends after 10 questions rendering the game over page. | ![Game over page](/docs/assets/game_over.webp) |
 |I want to know how many correct answers I got so I can review my performance.|The game over page renders the users final score|See above|
 |I want to be able to restart the game so that I can try again if I get distracted.|The restart button is located on the top right of the game page and take the user back to the home section.|See above|
 |I want to be able to view my current score, so that I know how well I am doing.|The restart button is located on the top left of the game page and updates with the user get a question correct.|See above|
