@@ -77,6 +77,6 @@ A game designed to make basic math fun for individuals of all ages
 8. Open a new window and type either:
 <div style="background:#f6f8fa; padding:1em; border-radius:6px;">
   <pre><code>http://127.0.0.1:8000/</code></pre>
-  or
+  <h6>or</h6>
   <pre><code>http://localhost:8000/</code></pre>
 </div>
