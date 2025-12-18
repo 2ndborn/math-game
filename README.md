@@ -53,8 +53,8 @@ A game designed to make basic math fun for individuals of all ages
 
 ### Clone Repository
 1. Login/Sign up to [GitHub]([GitHub](https://github.com/)
-2. Go to the project repository [Math-Game]([2ndborn/math-game](https://github.com/2ndborn/math-game)
-3. Click on the green code button, select whether you would like to clone with **HTTPS**, SSH or GitHub CLI and copy the link shown.
+2. Go to the project repository: [Math-Game]([2ndborn/math-game](https://github.com/2ndborn/math-game)
+3. Click on the green **Code** button, select whether you would like to clone with **HTTPS**, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory:
 <div style="background:#f6f8fa; padding:1em; border-radius:6px;">
   <pre><code>ls (list the files and folder)</code></pre>
@@ -80,3 +80,10 @@ A game designed to make basic math fun for individuals of all ages
   <h6>or</h6>
   <pre><code>http://localhost:8000/</code></pre>
 </div>
+
+## Deployment
+1. Go to the project repository [Math-Game](https://github.com/2ndborn/math-game)
+2. Go to settings, located at the top.
+3. Go to pages, located on the left under **Code and automation.**
+4. Under **Branch** switch from **None** to **Main**, then save.
+5. You should now see the site address at the top of the page.
