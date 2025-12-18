@@ -1,4 +1,4 @@
-const {keypad, del} = require('../script');
+const {keypad, delBtn} = require('../script');
 const {setupDOM} = require('../testUtils')
 
 describe('testing the keypad function', () => {
@@ -55,7 +55,7 @@ describe('testing the keypad function', () => {
     })
 
     test('test that the del button clears input', () => {
-        del()
+        delBtn()
         expect(document.getElementById("input").value).toBe("")
     })
 })

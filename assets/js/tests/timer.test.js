@@ -5,7 +5,7 @@ describe('checks the timer function', () => {
     beforeEach(() => {
         setupDOM();
         jest.useFakeTimers();
-        jest.spyOn(global, "setTimeout")
+        jest.spyOn(global, "setTimeout");
     });
 
     afterEach(() => {

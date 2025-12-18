@@ -111,15 +111,15 @@ function random() {
     operator.textContent = operators[randomOp];
 }
 
-function startBtn() {
-    const start = document.getElementById("start");
-    const restart = document.getElementById("restart");
-    start.classList.add("hide");
-    restart.classList.remove("hide");
-    const input = document.getElementById("input");
-    displayNum();
-    input.focus();
-}
+// function startBtn() {
+//     const start = document.getElementById("start");
+//     const restart = document.getElementById("restart");
+//     start.classList.add("hide");
+//     restart.classList.remove("hide");
+//     const input = document.getElementById("input");
+//     displayNum();
+//     input.focus();
+// }
 
 function restart() {
     location.reload();
@@ -171,11 +171,11 @@ function game(op) {
         title.classList.add("hide");
         container.classList.remove("hide");
         displayNum();
-        input.focus();
         rounds = 0;
         score = 0;
         document.getElementById("score").textContent = score;
     }, 5000);
+    input.focus();
 }
 
 function checkAnswer(randomFn = random) {
@@ -240,7 +240,7 @@ function incrementScore() {
 function incrementRounds() {
     if(!gameActive) return;
     rounds++;
-    if (rounds === 5) gameOver();
+    if (rounds === 10) gameOver();
 }
 
 function gameOver() {
@@ -248,23 +248,24 @@ function gameOver() {
     clearTimeout(timerId);
     const container = document.getElementById("container");
     container.classList.add("hide");
-    const div = document.createElement("div");
-    div.id = "title";
+    const title = document.getElementById("title");
+    // const div = document.createElement("div");
+    // div.id = "title";
     if (score === rounds) {
-        div.innerHTML = `
-        <h1 id="head">PERFECT SCORE</h1>
+        title.innerHTML = `
+        <h1 id="head">A PERFECT SCORE</h1>
     <h1 id="head">Game Over</h1>
     <h2 id="head2" style="color: green">You scored ${score}/${rounds}</h2>
     <button class="finishBtn" onclick="restart()">Play again?</button>
     `;
     } else {
-        div.innerHTML = `
+        title.innerHTML = `
     <h1 id="head">Game Over</h1>
     <h2 id="head2" style="color: red">You scored ${score}/${rounds}</h2>
     <button class="finishBtn" onclick="restart()">Play again?</button>
     `;
     }
-    body.appendChild(div);
+    // body.appendChild(div);
 }
 
 function gameBtnHover() {
@@ -284,33 +285,20 @@ function gameBtnHover() {
     });
 }
 document.addEventListener('DOMContentLoaded', gameBtnHover);
-// document.addEventListener('onmouseover', () => {
-//     const con = document.getElementById('title');
-//     const h3 = document.createElement('h3');
-//     const buttons = document.querySelectorAll('.game-btn');
-//     buttons.forEach(btn => {
-//         if (btn.innerHTML === '<i class="fa-solid fa-plus"></i>') {
-//             h3.textContent = "Challenge yourself with addition sums";
-//         } else if (btn.innerHTML === '<i class="fa-solid fa-minus"></i>') {
-//             h3.textContent = "Challenge yourself with subtraction sums";
-//         } else if (btn.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
-//             h3.textContent = "Challenge yourself with multiplication sums";
-//         } else if (btn.innerHTML === '<i class="fa-solid fa-divide"></i>') {
-//             h3.textContent = "Challenge yourself with division sums";
-//         }
-//     })
-//     con.appendChild(h3);
-// })
 
 module.exports = {
     displayNum, 
-    random, 
-    startBtn,
+    random,
     game, 
     checkAnswer,
     incrementScore,
     timer,
     submitBtn,
     keypad,
-    delBtn
+    delBtn,
+    showMessage,
+    gameOver,
+    getGameActive: () => gameActive,
+    setScore: (val) => { score = val; },
+    setRounds: (val) => { rounds = val; },
 }

@@ -5,10 +5,10 @@ describe("Math game functions", () => {
 
     beforeEach(setupDOM);
 
-    test('displayNum sets operand 1 between 1 & 99', () => {
+    test('displayNum sets operand 1 between 1 & 9', () => {
         displayNum();
         const operand1 = parseInt(document.getElementById("operand1").textContent);
-        expect(operand1).toBeLessThanOrEqual(99);
+        expect(operand1).toBeLessThanOrEqual(9);
         expect(operand1).toBeGreaterThanOrEqual(1);
     })
 
