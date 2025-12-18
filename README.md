@@ -49,6 +49,18 @@ A game designed to make basic math fun for individuals of all ages
 ## Testing
 [Click here to see view tests](/docs/testing.md)
 
+## LOCAL DEVELOPMENT
+
+### Clone Repository
+1. Login/Sign up to [GitHub]([GitHub](https://github.com/)
+2. Go to the project repository [Math-Game]([2ndborn/math-game](https://github.com/2ndborn/math-game)
+3. Click on the green code button, select whether you would like to clone with **HTTPS**, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory:
 <div style="background:#f6f8fa; padding:1em; border-radius:6px;">
-  <pre><code>pip3 install -r requirements.txt</code></pre>
+  <pre><code>ls (list the files and folder)</code></pre>
+  <pre><code>cd {name of location/directory}(change directory)</code></pre>
+</div>
+5. Type the following command in the terminal (after the git clone you will need to paste the link you copied in step 3 above):
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</code></pre>
 </div>
