@@ -64,3 +64,19 @@ A game designed to make basic math fun for individuals of all ages
 <div style="background:#f6f8fa; padding:1em; border-radius:6px;">
   <pre><code>git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</code></pre>
 </div>
+6. Set up a virtual environment:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>python -m venv name_env</code></pre>
+  <pre><code>name_env\Scripts\activate</code></pre>
+  <pre><code>Select the venv interpreter in VS Code (Ctrl+Shift+P → Python: Select Interpreter).</code></pre>
+</div>
+7. Run the server:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>python -m http.server</code></pre>
+</div>
+8. Open a new window and type either:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>http://127.0.0.1:8000/</code></pre>
+  or
+  <pre><code>http://localhost:8000/</code></pre>
+</div>
