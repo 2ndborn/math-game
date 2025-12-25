@@ -4,6 +4,10 @@ let isRandomMode = false
 let time = 10;
 let timerId = null;
 let gameActive = true;
+let add = '<i class="fa-solid fa-plus"></i>';
+let subtract = '<i class="fa-solid fa-minus"></i>';
+let multiply = '<i class="fa-solid fa-xmark"></i>';
+let divide = '<i class="fa-solid fa-divide"></i>';
 const body = document.body;
 body.classList.add("body")
 
@@ -106,9 +110,9 @@ function submitBtn() {
 
 function random() {
     let operator = document.getElementById("operator");
-    const operators = ["+", "-", "x", "÷"]
+    const operators = [add, subtract, multiply, divide]
     const randomOp = Math.floor(Math.random() * operators.length);
-    operator.textContent = operators[randomOp];
+    operator.innerHTML = operators[randomOp];
 }
 
 // function startBtn() {
@@ -138,16 +142,16 @@ function game(op) {
     if(desc) desc.remove();
     
     if (op === "+") {
-        operator.innerHTML = '<i class="fa-solid fa-plus"></i>';
+        operator.innerHTML = add;
         isRandomMode = false;
     } else if ( op === "-") {
-        operator.innerHTML = '<i class="fa-solid fa-minus"></i>';
+        operator.innerHTML = subtract;
         isRandomMode = false;
     } else if ( op === "*") {
-        operator.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        operator.innerHTML = multiply;
         isRandomMode = false;
     } else if ( op === "/") {
-        operator.innerHTML = '<i class="fa-solid fa-divide"></i>';
+        operator.innerHTML = divide;
         isRandomMode = false;
     } else if ( op === "?") {
         random();
@@ -185,13 +189,13 @@ function checkAnswer(randomFn = random) {
     let operator = document.getElementById("operator");
 
     let sum;
-    if (operator.innerHTML === '<i class="fa-solid fa-plus"></i>') {
+    if (operator.innerHTML === add) {
         sum = num1 + num2;
-    } else if (operator.innerHTML === '<i class="fa-solid fa-minus"></i>') {
+    } else if (operator.innerHTML === subtract) {
         sum = Math.abs(num1 - num2);
-    } else if (operator.innerHTML === '<i class="fa-solid fa-xmark"></i>') {
+    } else if (operator.innerHTML === multiply) {
         sum = num1 * num2;
-    } else if (operator.innerHTML === '<i class="fa-solid fa-divide"></i>') {
+    } else if (operator.innerHTML === divide) {
         sum = Math.floor(num1 / num2);
     }
 
@@ -276,6 +280,7 @@ function gameBtnHover() {
     buttons.forEach(btn => {
         btn.addEventListener('mouseover', () => {
             desc.textContent = btn.dataset.desc;
+            desc.style.textAlign = "center";
             desc.classList.add('show');
         });
         btn.addEventListener('mouseout', () => {
