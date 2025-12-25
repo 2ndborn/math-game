@@ -47,6 +47,16 @@ document.addEventListener("keydown", (event) => {
     }
 })
 
+function overlay() {
+    const overlay = document.getElementById("overlay");
+    overlay.classList.remove("hide")
+}
+
+function closeOverlay() {
+    const overlay = document.getElementById("overlay");
+    overlay.classList.add("hide")
+}
+
 
 function displayNum() {
     let operand1 = Math.floor(Math.random() * 9) + 1;
