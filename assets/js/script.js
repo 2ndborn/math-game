@@ -251,8 +251,7 @@ function gameOver() {
     const container = document.getElementById("container");
     container.classList.add("hide");
     const title = document.getElementById("title");
-    // const div = document.createElement("div");
-    // div.id = "title";
+    title.classList.remove("hide")
     if (score === rounds) {
         title.innerHTML = `
         <h1 id="head">A PERFECT SCORE</h1>
@@ -267,7 +266,6 @@ function gameOver() {
     <button class="finishBtn" onclick="restart()">Play again?</button>
     `;
     }
-    // body.appendChild(div);
 }
 
 function gameBtnHover() {
