@@ -126,14 +126,19 @@ body {
     border-radius: 2px;
 }
 
-.correct-answer {
+.message-container {
     position: absolute;
-    top: 10px;
-    left: 30%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     text-align: center;
     margin: 0;
     animation: answer 1s forwards;
 }
+
 
 @keyframes answer {
     0% {opacity: 0; transform: translateY(10px);}

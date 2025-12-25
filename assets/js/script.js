@@ -221,13 +221,15 @@ function checkAnswer(randomFn = random) {
 }
 
 function showMessage(text, color) {
+    const div = document.createElement("div");
+    div.classList.add("message-container")
     const h3 = document.createElement("h3");
-    h3.classList.add("correct-answer");
     h3.textContent = text;
     h3.style.color = color;
-    body.appendChild(h3);
+    div.appendChild(h3);
+    body.appendChild(div);
     setTimeout(() => {
-        h3.remove();
+        div.remove();
     }, 1000);
 }
 
