@@ -233,6 +233,7 @@ h4 {
 .keypad button.active {
     background-color: hsl(0, 0%, 15%);
     color: hsl(0, 0%, 100%);
+    border-radius: 100px;
 }
 
 .fa-check {
